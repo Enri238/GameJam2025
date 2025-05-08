@@ -1,1 +1,2 @@
-# Game Jam 2025
+# Game Jam 2025 UMA
+By Gamón James
