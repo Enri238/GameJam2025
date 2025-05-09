@@ -1,0 +1,42 @@
+[MENU DE JUEGO] 
+- JUGAR
+- SALIR
+Música épica de ELIAF
+[Empieza el juego]
+PANTALLA EN NEGRO CON EL SIGUIENTE TEXTO
+
+-¿Donde estoy? ¿Que ha pasado?
+
+Primera escena: Aparece nuestro guerrero, el cual parece un fantasma pero el no lo sabe.
+MUSICA ESTILO ELFICA DE EL SEÑOR DE LOS ANILLOS
+[TEXTO]
+-¿Esto es "ELIAF"?...
+[Jugabilidad]
+MUSICA RELAJANTE
+El jugador controla al personaje visitando la pequeña aldea, intentando hablar con la gente, los cuales no le escuchan pero el a ellos si, cuentan historias de un valiente caballero que salvó la ciudad, una gran guerra que hubo...
+
+[FlashBack]
+MUSICA DE ESPERANZA, ROLLO STAR WARS EPISODIO 4.
+Se ve a nuestro guerrero practicando el combate de joven, a modo de tutorial, para que el jugador practique antes de la batalla.
+
+PANTALLA EN NEGRO Y DE ACABA EL RECUERDO.
+
+EL JUGADOR CONTROLA AL CABALLERO HASTA QUE LLEGA A UNA GRAN ESTATUA EN EL CENTRO DE LA CIUDAD.
+
+-Reconozco esa estatua. Un momento, soy... Yo... , ¿que ha pasado? ¿Es que no estoy vivo?, se acerca a la estatua y ve a una bella mujer llevando  flores.
+
+-Reconozco a esta mujer. Pero si es... ¡Elena!
+
+-Aun te siento aquí "AFAR". Aun recuerdo ese día como si fuese ayer. - Dijo Elena.
+
+FUNDIDO EN NEGRO, APARECE EL SIGUIENTE TEXTO
+MUSICA SUPER ÉPICA
+Suenan tambores de guerra en "ELIAF". SE acerca el pueblo de los "cégaros".
+- "Hubo una paz armada hace un tiempo, pero ha llegado la hora de defender estas frías murallas" , dijo el valiente guerrero AFAR, general del ejército elíafo.
+Contexto:
+Nos encontramos en una ciudad medieval del siglo XII, rodeda de unas murallas en lo alto de una montalla rodeados de un río que la protege, el río "ojat", en el centro de Hispania.(Ciudad basada en Toledo)
+
+Comienza la guerra, se eliminan a x enemigos, batalla final con un Boss y cinemática de AFAR desangrándose y muriendo.
+
+FUNDIDO EN NEGRO CON EL TEXTO:
+"LA MUERTE NO ES EL FIN"
