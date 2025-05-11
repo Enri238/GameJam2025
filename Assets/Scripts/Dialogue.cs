@@ -1,0 +1,94 @@
+using System;
+using System.Collections;
+using TMPro;
+using UnityEngine;
+
+public class Dialogue : MonoBehaviour
+{
+
+	#region Variables
+	[SerializeField] private GameObject _dialogueMark, _dialoguePanel;
+	[SerializeField] private TMP_Text _dialogueText;
+	[SerializeField, TextArea(4, 6)] private string[] _dialogueLines;
+	private bool _isPlayerInRange, _isDialogueActive;
+	private int _lineIndex;
+	private float _typingSpeed = 0.05f;
+	#endregion
+
+	#region Unity Methods    
+
+	void Update()
+    {
+        if (_isPlayerInRange && Input.GetKeyDown(KeyCode.E))
+		{
+			if (!_isDialogueActive)
+			{
+				StartDialogue();
+			} else if (_dialogueText.text == _dialogueLines[_lineIndex])
+			{
+				NextDialogueLine();
+			} else
+			{
+				StopAllCoroutines();
+				_dialogueText.text = _dialogueLines[_lineIndex];
+			}
+		}
+    }
+
+	private void StartDialogue()
+	{
+		_isDialogueActive = true;
+		_dialoguePanel.SetActive(true);
+		_dialogueMark.SetActive(false);
+		_lineIndex = 0;
+		GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().enabled = false; // Deshabilitar movimiento del jugador
+		StartCoroutine(ShowLine());
+	}
+
+	private void NextDialogueLine()
+	{
+		_lineIndex++;
+		if (_lineIndex < _dialogueLines.Length)
+		{
+			StartCoroutine(ShowLine());
+		}
+		else
+		{
+			_isDialogueActive = false;
+			_dialoguePanel.SetActive(false);
+			_dialogueMark.SetActive(true);
+			GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().enabled = true; // Habilitar movimiento del jugador
+		}
+	}
+
+	private IEnumerator ShowLine()
+	{
+		_dialogueText.text = string.Empty;
+
+		foreach (char ch in _dialogueLines[_lineIndex])
+		{
+			_dialogueText.text += ch;
+			yield return new WaitForSeconds(_typingSpeed);
+		}
+	}
+
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		if (collision.gameObject.CompareTag("Player"))
+		{
+			_isPlayerInRange = true;
+			_dialogueMark.SetActive(true);
+		}
+	}
+	
+	private void OnTriggerExit2D(Collider2D collision)
+	{
+		if (collision.gameObject.CompareTag("Player"))
+		{
+			_isPlayerInRange = false;
+			_dialogueMark.SetActive(false);
+		}
+	}
+
+	#endregion
+}
