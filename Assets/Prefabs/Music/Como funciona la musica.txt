@@ -1,0 +1,9 @@
+todas las escenas tendrán un SceneMusic, el cual es un prefab que contiene un Script qu coge el mixer general, y un slider
+el cual es el del menu de inicio para tener ese volumen general siempre.
+A parte en la gerarquia tiene un aujidio Source qu basicamente es donde se pone la canción y el MaionMixer.
+
+Adicionalmente se puede usar el prefab SceneMusicStarter, al cual le indicamos los segundos de Delay que queremos hasta que empiece la cancion.
+
+
+en scene music starter hay un flag MusicOn que si esta a false no se reproduce la cancion, para cuando se esta debuggeando 
+no de problema
