@@ -41,7 +41,7 @@ public class Dialogue : MonoBehaviour
 		_dialoguePanel.SetActive(true);
 		_dialogueMark.SetActive(false);
 		_lineIndex = 0;
-		GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().enabled = false; // Deshabilitar movimiento del jugador
+		GameObject.FindGameObjectWithTag("Player").GetComponent<HeroKnightv2>().enabled = false; // Deshabilitar movimiento del jugador
 		StartCoroutine(ShowLine());
 	}
 
@@ -57,7 +57,7 @@ public class Dialogue : MonoBehaviour
 			_isDialogueActive = false;
 			_dialoguePanel.SetActive(false);
 			_dialogueMark.SetActive(true);
-			GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().enabled = true; // Habilitar movimiento del jugador
+			GameObject.FindGameObjectWithTag("Player").GetComponent<HeroKnightv2>().enabled = true; // Habilitar movimiento del jugador
 		}
 	}
 
