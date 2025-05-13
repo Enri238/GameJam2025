@@ -29,25 +29,25 @@ public class HeroKnightv2 : MonoBehaviour
 		m_timeSinceAttack += Time.deltaTime;
 
 		// Check if the player is attacking
-		bool isAttacking = m_animator.GetCurrentAnimatorStateInfo(0).IsTag("Attack1") ||
-						   m_animator.GetCurrentAnimatorStateInfo(0).IsTag("Attack2") ||
-						   m_animator.GetCurrentAnimatorStateInfo(0).IsTag("Attack3");
+		bool isAttacking = m_animator.GetCurrentAnimatorStateInfo(0).IsName("Attack1") ||
+						   m_animator.GetCurrentAnimatorStateInfo(0).IsName("Attack2") ||
+						   m_animator.GetCurrentAnimatorStateInfo(0).IsName("Attack3");
+
+		float inputX = Input.GetAxis("Horizontal");
+		// Swap direction of sprite depending on walk direction
+		if (inputX > 0)
+		{
+			GetComponent<SpriteRenderer>().flipX = false;
+		}
+		else if (inputX < 0)
+		{
+			GetComponent<SpriteRenderer>().flipX = true;
+		}
 
 		// -- Handle input and movement --
 		if (!isAttacking) // Only allow movement if not attacking
 		{
-			float inputX = Input.GetAxis("Horizontal");
 			float inputY = Input.GetAxis("Vertical");
-
-			// Swap direction of sprite depending on walk direction
-			if (inputX > 0)
-			{
-				GetComponent<SpriteRenderer>().flipX = false;
-			}
-			else if (inputX < 0)
-			{
-				GetComponent<SpriteRenderer>().flipX = true;
-			}
 
 			m_body2d.velocity = new Vector2(inputX * m_speed, inputY * m_speed);
 
