@@ -9,6 +9,7 @@ public class Dialogue : MonoBehaviour
 	#region Variables
 	[SerializeField] private GameObject _dialogueMark, _dialoguePanel;
 	[SerializeField] private TMP_Text _dialogueText;
+	[SerializeField] private bool _isMonologue;
 	[SerializeField, TextArea(4, 6)] private string[] _dialogueLines;
 	private bool _isPlayerInRange, _isDialogueActive;
 	private int _lineIndex;
@@ -17,9 +18,17 @@ public class Dialogue : MonoBehaviour
 
 	#region Unity Methods    
 
+	private void Start()
+	{
+		if (_isMonologue)
+		{
+			_dialogueMark.SetActive(false);
+		}
+	}
+
 	void Update()
     {
-        if (_isPlayerInRange && Input.GetKeyDown(KeyCode.E))
+        if (_isPlayerInRange && (Input.GetKeyDown(KeyCode.E) || (_isMonologue && !_isDialogueActive)))
 		{
 			if (!_isDialogueActive)
 			{
@@ -41,7 +50,12 @@ public class Dialogue : MonoBehaviour
 		_dialoguePanel.SetActive(true);
 		_dialogueMark.SetActive(false);
 		_lineIndex = 0;
-		GameObject.FindGameObjectWithTag("Player").GetComponent<HeroKnightv2>().enabled = false; // Deshabilitar movimiento del jugador
+
+		GameObject player = GameObject.FindGameObjectWithTag("Player");
+		player.GetComponent<Rigidbody2D>().velocity = Vector2.zero; // Detener movimiento del jugador
+		player.GetComponent<HeroKnightv2>().enabled = false; // Deshabilitar movimiento del jugador
+		player.GetComponent<Animator>().SetInteger("AnimState", 0); // Detener animación
+
 		StartCoroutine(ShowLine());
 	}
 
@@ -58,6 +72,10 @@ public class Dialogue : MonoBehaviour
 			_dialoguePanel.SetActive(false);
 			_dialogueMark.SetActive(true);
 			GameObject.FindGameObjectWithTag("Player").GetComponent<HeroKnightv2>().enabled = true; // Habilitar movimiento del jugador
+			if (_isMonologue)
+			{
+				Destroy(this.gameObject);
+			}
 		}
 	}
 

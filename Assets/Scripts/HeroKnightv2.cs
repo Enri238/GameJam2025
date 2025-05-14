@@ -1,10 +1,11 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class HeroKnightv2 : MonoBehaviour
 {
-	[SerializeField] float m_speed = 4.0f;
-	[SerializeField] GameObject m_slideDust;
+	[SerializeField] float m_speed = 4.0f; 
+	[SerializeField] bool isGhost;
 
 	private Animator m_animator;
 	private Rigidbody2D m_body2d;
@@ -20,6 +21,12 @@ public class HeroKnightv2 : MonoBehaviour
 
 		m_animator.SetBool("Grounded", true);
 		m_body2d.gravityScale = 0;
+
+		if (isGhost) // Cambiar color y desactivar sombra si está muerto
+		{
+			GetComponent<SpriteRenderer>().color = new Color(130f / 255f, 255f / 255f, 255f / 255f, 150f / 255f);
+			transform.Find("Sombreado").gameObject.SetActive(false);
+		}
 	}
 
 	// Update is called once per frame
@@ -76,12 +83,12 @@ public class HeroKnightv2 : MonoBehaviour
 		// -- Handle Animations --
 
 		// Hurt
-		if (Input.GetKeyDown("q"))
+		if (Input.GetKeyDown("q") && !isGhost) // Solo puede recibir daño si no está muerto
 		{
 			m_animator.SetTrigger("Hurt");
 		}
 		// Attack
-		else if (Input.GetMouseButtonDown(0) && m_timeSinceAttack > 0.25f)
+		else if (Input.GetMouseButtonDown(0) && m_timeSinceAttack > 0.25f && !isGhost) // Solo puede atacar si no está muerto
 		{
 			m_currentAttack++;
 
