@@ -225,7 +225,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00033774972, y: -0.090046406}
+  m_Offset: {x: -0.006020665, y: 0.3746742}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -236,7 +236,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.50574267, y: 0.445189}
+  m_Size: {x: 1.5400369, y: 0.61823726}
   m_EdgeRadius: 0
 --- !u!114 &3228735468008712452
 MonoBehaviour:
@@ -255,5 +255,10 @@ MonoBehaviour:
   _dialogueText: {fileID: 0}
   _isMonologue: 1
   _dialogueLines:
-  - Buenas, caballero.
-  - Esto es una prueba.
+  - "\xBF?: Reconozco esa estatua..."
+  - "\xBF?: Un momento... \xA1Soy yo!"
+  - "\xBF?: \xBFQu\xE9 ha pasado? \xBFEs que no estoy vivo?"
+  - "\xBF?: Reconozco a esta mujer... Pero si es... \xA1Elena!\r\n"
+  - "ELENA: A\xFAn te siento aqu\xED AFAR. A\xFAn recuerdo ese d\xEDa como si fuese
+    ayer.\r"
+  - "AFAR: \xBFQu\xE9 d\xEDa? \xBFA qu\xE9 se refiere?\r"

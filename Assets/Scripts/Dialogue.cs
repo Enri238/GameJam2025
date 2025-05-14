@@ -13,7 +13,7 @@ public class Dialogue : MonoBehaviour
 	[SerializeField, TextArea(4, 6)] private string[] _dialogueLines;
 	private bool _isPlayerInRange, _isDialogueActive;
 	private int _lineIndex;
-	private float _typingSpeed = 0.05f;
+	private float _typingSpeed = 0.033f;
 	#endregion
 
 	#region Unity Methods    
