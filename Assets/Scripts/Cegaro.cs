@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Banditv2 : MonoBehaviour {
+public class Cegaro : MonoBehaviour {
 
     [SerializeField] float      m_speed = 4.0f;
     [SerializeField] Transform  target;

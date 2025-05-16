@@ -51,7 +51,7 @@ public class Dialogue : MonoBehaviour
 		_dialogueMark.SetActive(false);
 		_lineIndex = 0;
 
-		GameObject player = GameObject.FindGameObjectWithTag("Player");
+		GameObject player = GameObject.Find("Jugador");
 		player.GetComponent<Rigidbody2D>().velocity = Vector2.zero; // Detener movimiento del jugador
 		player.GetComponent<HeroKnightv2>().enabled = false; // Deshabilitar movimiento del jugador
 		player.GetComponent<Animator>().SetInteger("AnimState", 0); // Detener animación
