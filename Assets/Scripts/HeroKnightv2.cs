@@ -12,7 +12,7 @@ public class HeroKnightv2 : MonoBehaviour
 	private int m_currentAttack = 0;
 	private float m_timeSinceAttack = 0.0f;
 	private float m_delayToIdle = 0.0f;
-	private Vector2 m_ColliderOffset;
+	//private Vector2 m_ColliderOffset;	// No hace falta ya, se había bugeado el collider. Lo dejo comentado por si acaso
 
 	// Use this for initialization
 	void Start()
@@ -23,7 +23,7 @@ public class HeroKnightv2 : MonoBehaviour
 		m_animator.SetBool("Grounded", true);
 		m_body2d.gravityScale = 0;
 
-		m_ColliderOffset = GetComponent<Collider2D>().offset;
+		//m_ColliderOffset = GetComponent<Collider2D>().offset;
 
 		if (isGhost) // Cambiar color y desactivar sombra si está muerto
 		{
@@ -48,12 +48,12 @@ public class HeroKnightv2 : MonoBehaviour
 		if (inputX > 0)
 		{
 			GetComponent<SpriteRenderer>().flipX = false;
-			GetComponent<Collider2D>().offset = m_ColliderOffset;
+			//GetComponent<Collider2D>().offset = m_ColliderOffset;
 		}
 		else if (inputX < 0)
 		{
 			GetComponent<SpriteRenderer>().flipX = true;
-			GetComponent<Collider2D>().offset = new Vector2(-m_ColliderOffset.x, m_ColliderOffset.y);
+			//GetComponent<Collider2D>().offset = new Vector2(-m_ColliderOffset.x, m_ColliderOffset.y);
 		}
 
 		// -- Handle input and movement --
