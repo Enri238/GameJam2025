@@ -6,13 +6,16 @@ public class HeroKnightv2 : MonoBehaviour
 {
 	[SerializeField] float m_speed = 4.0f; 
 	[SerializeField] bool isGhost;
+	[SerializeField] GameObject hitbox;
 
 	private Animator m_animator;
 	private Rigidbody2D m_body2d;
 	private int m_currentAttack = 0;
-	private float m_timeSinceAttack = 0.0f;
+	private float m_timeSinceAttack = 0.5f;
 	private float m_delayToIdle = 0.0f;
 	//private Vector2 m_ColliderOffset;	// No hace falta ya, se había bugeado el collider. Lo dejo comentado por si acaso
+	private Vector2 m_HitboxColliderOffset;
+	private float m_HitboxOffsetX;
 
 	// Use this for initialization
 	void Start()
@@ -24,7 +27,12 @@ public class HeroKnightv2 : MonoBehaviour
 		m_body2d.gravityScale = 0;
 
 		//m_ColliderOffset = GetComponent<Collider2D>().offset;
-
+		if (hitbox)
+		{
+			m_HitboxColliderOffset = hitbox.GetComponent<Collider2D>().offset; // Offset de hitbox
+			m_HitboxOffsetX = hitbox.transform.position.x + 0.6f; // Offset de hitbox + distancia al centro del personaje
+		}
+		
 		if (isGhost) // Cambiar color y desactivar sombra si está muerto
 		{
 			GetComponent<SpriteRenderer>().color = new Color(130f / 255f, 255f / 255f, 255f / 255f, 150f / 255f);
@@ -48,11 +56,20 @@ public class HeroKnightv2 : MonoBehaviour
 		if (inputX > 0)
 		{
 			GetComponent<SpriteRenderer>().flipX = false;
+			if (hitbox)
+			{
+				hitbox.GetComponent<Collider2D>().offset = m_HitboxColliderOffset;
+			}
 			//GetComponent<Collider2D>().offset = m_ColliderOffset;
 		}
 		else if (inputX < 0)
 		{
 			GetComponent<SpriteRenderer>().flipX = true;
+			if (hitbox)
+			{
+				hitbox.GetComponent<Collider2D>().offset = new Vector2(-m_HitboxColliderOffset.x - m_HitboxOffsetX,
+																		m_HitboxColliderOffset.y);
+			}
 			//GetComponent<Collider2D>().offset = new Vector2(-m_ColliderOffset.x, m_ColliderOffset.y);
 		}
 
@@ -93,7 +110,7 @@ public class HeroKnightv2 : MonoBehaviour
 			m_animator.SetTrigger("Hurt");
 		}
 		// Attack
-		else if (Input.GetMouseButtonDown(0) && m_timeSinceAttack > 0.25f && !isGhost) // Solo puede atacar si no está muerto
+		else if (Input.GetMouseButtonDown(0) && m_timeSinceAttack > 0.5f && !isGhost) // Solo puede atacar si no está muerto
 		{
 			m_currentAttack++;
 
@@ -110,6 +127,16 @@ public class HeroKnightv2 : MonoBehaviour
 
 			// Reset timer
 			m_timeSinceAttack = 0.0f;
+
+			// Activar hitbox brevemente
+			StartCoroutine(EnableHitbox(0.2f)); // activa por 0.2 segundos
 		}
+	}
+
+	private IEnumerator EnableHitbox(float duration)
+	{
+		hitbox.SetActive(true);
+		yield return new WaitForSeconds(duration);
+		hitbox.SetActive(false);
 	}
 }

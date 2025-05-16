@@ -35,6 +35,7 @@ public class Cegaro : MonoBehaviour {
 
 		float distanceToTarget = Vector3.Distance(transform.position, target.position);
 		bool isAttacking = m_animator.GetCurrentAnimatorStateInfo(0).IsName("Attack");
+		bool isBeingHurt = m_animator.GetCurrentAnimatorStateInfo(0).IsName("Hurt");
 		// Attack if reached target
 		if (distanceToTarget < 0.5f)
 		{
@@ -45,12 +46,16 @@ public class Cegaro : MonoBehaviour {
         }
 
 		// Move <-- Los comentarios de este if hacen que no se pueda empujar. Si se prefiere: descomentar
-		if (!m_attack && !isAttacking)
+		if (!m_attack && !isAttacking && !isBeingHurt)
 		{
 			//m_body2d.bodyType = RigidbodyType2D.Dynamic;
 			transform.position = Vector2.MoveTowards(transform.position, target.position, Time.deltaTime * m_speed);
-		} else
-        {
+		} else if (isBeingHurt)
+		{
+			//
+		}
+		else
+		{
 			//m_body2d.bodyType = RigidbodyType2D.Kinematic;
 			m_body2d.velocity = Vector2.zero; // Se para en seco cuando ataca
 		}
@@ -67,18 +72,14 @@ public class Cegaro : MonoBehaviour {
             m_isDead = !m_isDead;
         }
 
-        //Hurt
-        else if (Input.GetKeyDown("q"))
-            m_animator.SetTrigger("Hurt");
-
         //Attack
-        else if (m_attack && !isAttacking)
+        else if (m_attack && !isAttacking && !isBeingHurt)
         {
             m_animator.SetTrigger("Attack");
         }
 
         //Run
-        else if (!m_attack)
+        else if (!m_attack && !isBeingHurt)
             m_animator.SetInteger("AnimState", 2);
     }
 
@@ -93,5 +94,18 @@ public class Cegaro : MonoBehaviour {
         {
 			m_spawner.CegaroDestruido();
 		}
+	}
+
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		if (collision.gameObject.CompareTag("Attack"))
+		{
+			TakeDamage();
+		}
+	}
+
+	public void TakeDamage()
+	{
+		m_animator.SetTrigger("Hurt");
 	}
 }
