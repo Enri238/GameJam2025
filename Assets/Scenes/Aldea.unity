@@ -16216,7 +16216,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1402469138
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17269,6 +17269,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5553830330112600587, guid: 022fe5cf8c1ad6f4f9880827df445d74, type: 3}
   m_PrefabInstance: {fileID: 1447615943}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1463530376 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2949442407887277183, guid: 5db2524dc527952418cc9c34460e3b90, type: 3}
+  m_PrefabInstance: {fileID: 6393495772726785013}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1484177743
 PrefabInstance:
@@ -21676,6 +21681,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7789772945384442821, guid: f5c18f6a2613cb845a439fb7f2b9bdd7, type: 3}
   m_PrefabInstance: {fileID: 1970983112}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1989843904
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1989843906}
+  - component: {fileID: 1989843905}
+  - component: {fileID: 1989843907}
+  m_Layer: 0
+  m_Name: Cinematica_llegada_Eliaf
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!320 &1989843905
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989843904}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 0}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings: []
+  m_ExposedReferences:
+    m_References: []
+--- !u!4 &1989843906
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989843904}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1989843907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989843904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52bd2f10f7cdd047b9b437a8b60610a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Jugador: {fileID: 1463530376}
 --- !u!1001 &2016000911
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23844,7 +23912,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 330525922247592307, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.9086423
+      value: -6.52
       objectReference: {fileID: 0}
     - target: {fileID: 330525922247592307, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -24870,7 +24938,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6918747051919172067, guid: 8de415a58637d5641bd09396a0e27793, type: 3}
       propertyPath: MusicOn
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6918747051919172067, guid: 8de415a58637d5641bd09396a0e27793, type: 3}
       propertyPath: sceneMusicObject
@@ -24965,7 +25033,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3872215460220623592, guid: 5db2524dc527952418cc9c34460e3b90, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.77
+      value: -17.95
       objectReference: {fileID: 0}
     - target: {fileID: 3872215460220623592, guid: 5db2524dc527952418cc9c34460e3b90, type: 3}
       propertyPath: m_LocalPosition.z
@@ -24999,10 +25067,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5285560959965929487, guid: 5db2524dc527952418cc9c34460e3b90, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2949442407887277183, guid: 5db2524dc527952418cc9c34460e3b90, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8413529789616542225}
   m_SourcePrefab: {fileID: 100100000, guid: 5db2524dc527952418cc9c34460e3b90, type: 3}
 --- !u!1001 &6531395857883804820
 PrefabInstance:
@@ -25190,6 +25265,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3872215460220623592, guid: 5db2524dc527952418cc9c34460e3b90, type: 3}
   m_PrefabInstance: {fileID: 6393495772726785013}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &8413529789616542224 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2610518402208262059, guid: 5db2524dc527952418cc9c34460e3b90, type: 3}
+  m_PrefabInstance: {fileID: 6393495772726785013}
+  m_PrefabAsset: {fileID: 0}
+--- !u!320 &8413529789616542225
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463530376}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: eb76bd3639dd2fe429421ee3b19b6096, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -7524756008601404019, guid: eb76bd3639dd2fe429421ee3b19b6096, type: 2}
+    value: {fileID: 8413529789616542224}
+  - key: {fileID: -6791764546884045692, guid: eb76bd3639dd2fe429421ee3b19b6096, type: 2}
+    value: {fileID: 8413529789616542224}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1001 &8470599508803235748
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25311,6 +25412,10 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: bf2d774d57dc4df4598f8d9fafb65a36, type: 3}
+    - target: {fileID: 5830934849779445241, guid: 4b6fe953991f81145bdda38a2f750e8a, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7252664880750342455, guid: 4b6fe953991f81145bdda38a2f750e8a, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -25390,3 +25495,4 @@ SceneRoots:
   - {fileID: 6393495772726785013}
   - {fileID: 418321125}
   - {fileID: 1828787666}
+  - {fileID: 1989843906}
