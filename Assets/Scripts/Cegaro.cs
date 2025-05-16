@@ -10,14 +10,17 @@ public class Cegaro : MonoBehaviour {
     private Rigidbody2D         m_body2d;
     private bool                m_attack = false;
     private bool                m_isDead = false;
+    private Spawner             m_spawner;
 
-    // Use this for initialization
-    void Start () {
+	// Use this for initialization
+	void Start () {
 		m_animator = GetComponent<Animator>();
         m_body2d = GetComponent<Rigidbody2D>();
 
 		m_animator.SetBool("Grounded", true);
         m_body2d.gravityScale = 0;
+
+        target = GameObject.Find("Jugador").transform;
 	}
 	
 	// Update is called once per frame
@@ -78,4 +81,17 @@ public class Cegaro : MonoBehaviour {
         else if (!m_attack)
             m_animator.SetInteger("AnimState", 2);
     }
+
+	public void SetSpawner(Spawner spawner)
+	{
+		m_spawner = spawner;
+	}
+
+	private void OnDestroy()
+	{
+        if (m_spawner != null)
+        {
+			m_spawner.CegaroDestruido();
+		}
+	}
 }

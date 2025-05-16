@@ -25317,6 +25317,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5285560959965929487, guid: 5db2524dc527952418cc9c34460e3b90, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25649,26 +25653,6 @@ PrefabInstance:
     - target: {fileID: 744799516882677737, guid: 806341747fa86c14abb5fe386c797da1, type: 3}
       propertyPath: m_Name
       value: Fuente
-      objectReference: {fileID: 0}
-    - target: {fileID: 2311811787515321792, guid: 806341747fa86c14abb5fe386c797da1, type: 3}
-      propertyPath: m_Radius
-      value: 0.28623042
-      objectReference: {fileID: 0}
-    - target: {fileID: 2311811787515321792, guid: 806341747fa86c14abb5fe386c797da1, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.0015865962
-      objectReference: {fileID: 0}
-    - target: {fileID: 2311811787515321792, guid: 806341747fa86c14abb5fe386c797da1, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.055555664
-      objectReference: {fileID: 0}
-    - target: {fileID: 3431829009061575393, guid: 806341747fa86c14abb5fe386c797da1, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3431829009061575393, guid: 806341747fa86c14abb5fe386c797da1, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3431829009061575393, guid: 806341747fa86c14abb5fe386c797da1, type: 3}
       propertyPath: m_LocalPosition.x
