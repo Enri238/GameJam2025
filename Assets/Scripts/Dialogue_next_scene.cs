@@ -3,7 +3,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-public class Dialogue : MonoBehaviour
+public class Dialogue_next_scene : MonoBehaviour
 {
 
 	#region Variables
@@ -61,23 +61,34 @@ public class Dialogue : MonoBehaviour
 
 	private void NextDialogueLine()
 	{
-		_lineIndex++;
-		if (_lineIndex < _dialogueLines.Length)
-		{
-			StartCoroutine(ShowLine());
-		}
-		else
-		{
-			_isDialogueActive = false;
-			_dialoguePanel.SetActive(false);
-			_dialogueMark.SetActive(true);
-			GameObject.FindGameObjectWithTag("Player").GetComponent<HeroKnightv2>().enabled = true; // Habilitar movimiento del jugador
-			if (_isMonologue)
-			{
-				Destroy(this.gameObject);
-			}
-		}
-	}
+    _lineIndex++;
+    if (_lineIndex < _dialogueLines.Length)
+    {
+        StartCoroutine(ShowLine());
+    }
+    else
+    {
+        _isDialogueActive = false;
+        _dialoguePanel.SetActive(false);
+        _dialogueMark.SetActive(true);
+        GameObject.FindGameObjectWithTag("Player").GetComponent<HeroKnightv2>().enabled = true; // Habilitar movimiento del jugador
+
+        // Aquí llamamos al GameManager para cargar siguiente nivel
+        if (SceneController.instance != null)
+        {
+            SceneController.instance.NextLevel();
+        }
+        else
+        {
+            Debug.LogWarning("SceneController instance no encontrada.");
+        }
+
+        if (_isMonologue)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+}
 
 	private IEnumerator ShowLine()
 	{
