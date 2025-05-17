@@ -5473,6 +5473,7 @@ Transform:
   m_Children:
   - {fileID: 7189265797087764243}
   - {fileID: 1801752859}
+  - {fileID: 1407923962}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &440852285
@@ -12910,11 +12911,20 @@ PrefabInstance:
       objectReference: {fileID: 33574544}
     - target: {fileID: 8349590598039267817, guid: 764166de57e12024b92141cce553fbfa, type: 3}
       propertyPath: _dialogueLines.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8349590598039267817, guid: 764166de57e12024b92141cce553fbfa, type: 3}
       propertyPath: _dialogueLines.Array.data[0]
-      value: Texto de ejemplo
+      value: "Antonio: A\xFAn recuerdo a ese chico"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8349590598039267817, guid: 764166de57e12024b92141cce553fbfa, type: 3}
+      propertyPath: _dialogueLines.Array.data[1]
+      value: "Antonio: Sol\xEDa darle clase de programacion de videojuegos en la
+        universidad de Eliaf"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8349590598039267817, guid: 764166de57e12024b92141cce553fbfa, type: 3}
+      propertyPath: _dialogueLines.Array.data[2]
+      value: "Antonio: Sol\xEDa darle clase en la universidad de Eliaf"
       objectReference: {fileID: 0}
     - target: {fileID: 8478755613202974568, guid: 764166de57e12024b92141cce553fbfa, type: 3}
       propertyPath: m_Name
@@ -15418,11 +15428,15 @@ PrefabInstance:
       objectReference: {fileID: 33574544}
     - target: {fileID: 8349590598039267817, guid: 764166de57e12024b92141cce553fbfa, type: 3}
       propertyPath: _dialogueLines.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8349590598039267817, guid: 764166de57e12024b92141cce553fbfa, type: 3}
       propertyPath: _dialogueLines.Array.data[0]
-      value: Texto de ejemplo
+      value: Por culpa de AFAR tengo que seguir trabajando en MERCAELIAF.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8349590598039267817, guid: 764166de57e12024b92141cce553fbfa, type: 3}
+      propertyPath: _dialogueLines.Array.data[1]
+      value: CON LO BIEN QUE ESTABA YO EN MI CASA!
       objectReference: {fileID: 0}
     - target: {fileID: 8478755613202974568, guid: 764166de57e12024b92141cce553fbfa, type: 3}
       propertyPath: m_Name
@@ -15436,6 +15450,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1630354346, guid: 1443b4e9602733f44a0a0a47d203160f, type: 3}
+    - target: {fileID: 8955112793470910468, guid: 764166de57e12024b92141cce553fbfa, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 2075653839982275967, guid: 764166de57e12024b92141cce553fbfa, type: 3}
@@ -16601,6 +16619,119 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4411734685028231826, guid: c09e6d776f61fcf4db2322c3f243849c, type: 3}
   m_PrefabInstance: {fileID: 1407113481}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1407923962 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 330525922247592307, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
+  m_PrefabInstance: {fileID: 1409448603}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1409448603
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 418321125}
+    m_Modifications:
+    - target: {fileID: 330525922247592307, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 330525922247592307, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.053949
+      objectReference: {fileID: 0}
+    - target: {fileID: 330525922247592307, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 330525922247592307, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.15890938
+      objectReference: {fileID: 0}
+    - target: {fileID: 330525922247592307, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 330525922247592307, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 330525922247592307, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 330525922247592307, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 330525922247592307, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 330525922247592307, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 330525922247592307, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228735468008712452, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228735468008712452, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
+      propertyPath: _dialogueText
+      value: 
+      objectReference: {fileID: 1298910179}
+    - target: {fileID: 3228735468008712452, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
+      propertyPath: _dialoguePanel
+      value: 
+      objectReference: {fileID: 33574544}
+    - target: {fileID: 3228735468008712452, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
+      propertyPath: _dialogueLines.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228735468008712452, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
+      propertyPath: _dialogueLines.Array.data[0]
+      value: 'AFAR: Ahora lo recuerdo todo...'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228735468008712452, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
+      propertyPath: _dialogueLines.Array.data[5]
+      value: "AFAR: \xBFQu\xE9 d\xEDa? \xBFA qu\xE9 te refieres ELENA?\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228735468008712452, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
+      propertyPath: _dialogueLines.Array.data[6]
+      value: "ELENA: ...\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228735468008712452, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
+      propertyPath: _dialogueLines.Array.data[7]
+      value: "AFAR: \xBFELENA? \xBFMe escuchas?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8669396815012926873, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
+      propertyPath: m_Size.x
+      value: 2.5297406
+      objectReference: {fileID: 0}
+    - target: {fileID: 8669396815012926873, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.006020665
+      objectReference: {fileID: 0}
+    - target: {fileID: 9058860344432867297, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
+      propertyPath: m_Name
+      value: Punto de tumba
+      objectReference: {fileID: 0}
+    - target: {fileID: 9058860344432867297, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
+      propertyPath: m_TagString
+      value: newScene
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9058860344432867297, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1449940416}
+  m_SourcePrefab: {fileID: 100100000, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
 --- !u!1001 &1410846358
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17470,6 +17601,29 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5553830330112600587, guid: 022fe5cf8c1ad6f4f9880827df445d74, type: 3}
   m_PrefabInstance: {fileID: 1447615943}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1449940415 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9058860344432867297, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
+  m_PrefabInstance: {fileID: 1409448603}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1449940416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449940415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 862be1f0b97ef4b419555b11ea7cfb98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialogueMark: {fileID: 5045185893429648583}
+  _dialoguePanel: {fileID: 33574544}
+  _dialogueText: {fileID: 1298910179}
+  _isMonologue: 1
+  _dialogueLines:
+  - 'AFAR: Ahora lo recuerdo todo...'
 --- !u!1 &1463530376 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2949442407887277183, guid: 5db2524dc527952418cc9c34460e3b90, type: 3}
@@ -23779,11 +23933,15 @@ PrefabInstance:
       objectReference: {fileID: 33574544}
     - target: {fileID: 8349590598039267817, guid: 764166de57e12024b92141cce553fbfa, type: 3}
       propertyPath: _dialogueLines.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8349590598039267817, guid: 764166de57e12024b92141cce553fbfa, type: 3}
       propertyPath: _dialogueLines.Array.data[0]
-      value: Texto de ejemplo
+      value: Gracias a AFAR ahora reina la tranquilidad en estas tierras.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8349590598039267817, guid: 764166de57e12024b92141cce553fbfa, type: 3}
+      propertyPath: _dialogueLines.Array.data[1]
+      value: "\xA1Dichoso el d\xEDa que vino el pueblo de los c\xE9garos a atacarnos!"
       objectReference: {fileID: 0}
     - target: {fileID: 8478755613202974568, guid: 764166de57e12024b92141cce553fbfa, type: 3}
       propertyPath: m_Name
@@ -24460,6 +24618,14 @@ PrefabInstance:
       propertyPath: _dialoguePanel
       value: 
       objectReference: {fileID: 33574544}
+    - target: {fileID: 8349590598039267817, guid: 764166de57e12024b92141cce553fbfa, type: 3}
+      propertyPath: _dialogueLines.Array.data[0]
+      value: "AFAR fue el guerrero mas valiente que ha tenido y tendr\xE1 ELIAF."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8349590598039267817, guid: 764166de57e12024b92141cce553fbfa, type: 3}
+      propertyPath: _dialogueLines.Array.data[1]
+      value: Fue una gran perdida, era el lider del gran Ejercito de ELIAF
+      objectReference: {fileID: 0}
     - target: {fileID: 8478755613202974568, guid: 764166de57e12024b92141cce553fbfa, type: 3}
       propertyPath: m_Name
       value: Viejo
@@ -25145,6 +25311,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b16772da8b416204a852207574d0cfa2, type: 3}
+--- !u!1 &5045185893429648583 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3107795979247836999, guid: b16772da8b416204a852207574d0cfa2, type: 3}
+  m_PrefabInstance: {fileID: 5045185893429648582}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5220926095193770905
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25256,7 +25427,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6918747051919172067, guid: 8de415a58637d5641bd09396a0e27793, type: 3}
       propertyPath: MusicOn
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6918747051919172067, guid: 8de415a58637d5641bd09396a0e27793, type: 3}
       propertyPath: sceneMusicObject
