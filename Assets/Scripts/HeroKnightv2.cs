@@ -13,9 +13,6 @@ public class HeroKnightv2 : MonoBehaviour
 	private int m_currentAttack = 0;
 	private float m_timeSinceAttack = 0.5f;
 	private float m_delayToIdle = 0.0f;
-	//private Vector2 m_ColliderOffset;	// No hace falta ya, se había bugeado el collider. Lo dejo comentado por si acaso
-	private Vector2 m_HitboxColliderOffset;
-	private float m_HitboxOffsetX;
 
 	// Use this for initialization
 	void Start()
@@ -25,13 +22,6 @@ public class HeroKnightv2 : MonoBehaviour
 
 		m_animator.SetBool("Grounded", true);
 		m_body2d.gravityScale = 0;
-
-		//m_ColliderOffset = GetComponent<Collider2D>().offset;
-		if (hitbox)
-		{
-			m_HitboxColliderOffset = hitbox.GetComponent<Collider2D>().offset; // Offset de hitbox
-			m_HitboxOffsetX = hitbox.transform.position.x + 0.6f; // Offset de hitbox + distancia al centro del personaje
-		}
 		
 		if (isGhost) // Cambiar color y desactivar sombra si está muerto
 		{
@@ -50,31 +40,21 @@ public class HeroKnightv2 : MonoBehaviour
 		bool isAttacking = m_animator.GetCurrentAnimatorStateInfo(0).IsName("Attack1") ||
 						   m_animator.GetCurrentAnimatorStateInfo(0).IsName("Attack2") ||
 						   m_animator.GetCurrentAnimatorStateInfo(0).IsName("Attack3");
+		bool isBeingHurt = m_animator.GetCurrentAnimatorStateInfo(0).IsName("Hurt");
 
 		float inputX = Input.GetAxis("Horizontal");
 		// Swap direction of sprite depending on walk direction
 		if (inputX > 0)
 		{
-			GetComponent<SpriteRenderer>().flipX = false;
-			if (hitbox)
-			{
-				hitbox.GetComponent<Collider2D>().offset = m_HitboxColliderOffset;
-			}
-			//GetComponent<Collider2D>().offset = m_ColliderOffset;
+			transform.localScale = new Vector3(0.5f, 0.5f, 1.0f);
 		}
 		else if (inputX < 0)
 		{
-			GetComponent<SpriteRenderer>().flipX = true;
-			if (hitbox)
-			{
-				hitbox.GetComponent<Collider2D>().offset = new Vector2(-m_HitboxColliderOffset.x - m_HitboxOffsetX,
-																		m_HitboxColliderOffset.y);
-			}
-			//GetComponent<Collider2D>().offset = new Vector2(-m_ColliderOffset.x, m_ColliderOffset.y);
+			transform.localScale = new Vector3(-0.5f, 0.5f, 1.0f);
 		}
 
 		// -- Handle input and movement --
-		if (!isAttacking) // Only allow movement if not attacking
+		if (!isAttacking && !isBeingHurt) // Only allow movement if not attacking or being hurt
 		{
 			float inputY = Input.GetAxis("Vertical");
 
@@ -98,19 +78,15 @@ public class HeroKnightv2 : MonoBehaviour
 		}
 		else
 		{
-			// Stop movement while attacking
+			// Stop movement while attacking or being hurt
 			m_body2d.velocity = Vector2.zero;
 		}
 
 		// -- Handle Animations --
 
-		// Hurt
-		if (Input.GetKeyDown("q") && !isGhost) // Solo puede recibir daño si no está muerto
-		{
-			m_animator.SetTrigger("Hurt");
-		}
 		// Attack
-		else if (Input.GetMouseButtonDown(0) && m_timeSinceAttack > 0.5f && !isGhost) // Solo puede atacar si no está muerto
+		// Solo puede atacar si no está muerto y no le están haciendo daño
+		if (Input.GetMouseButtonDown(0) && m_timeSinceAttack > 0.5f && !isGhost && !isBeingHurt)
 		{
 			m_currentAttack++;
 
@@ -138,5 +114,19 @@ public class HeroKnightv2 : MonoBehaviour
 		hitbox.SetActive(true);
 		yield return new WaitForSeconds(duration);
 		hitbox.SetActive(false);
+	}
+
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		if (collision.gameObject.CompareTag("EnemyAttack"))
+		{
+			TakeDamage();
+		}
+	}
+
+	public void TakeDamage()
+	{
+		// Animación de daño
+		m_animator.SetTrigger("Hurt");
 	}
 }

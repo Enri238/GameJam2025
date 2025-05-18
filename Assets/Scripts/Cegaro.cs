@@ -13,6 +13,9 @@ public class Cegaro : MonoBehaviour {
     private Spawner             m_spawner;
 	private int                 m_hits2die;
 
+	private GameObject			m_hitbox;
+	private float				m_timeSinceAttack;
+
 	// Use this for initialization
 	void Start () {
 		m_animator = GetComponent<Animator>();
@@ -26,6 +29,9 @@ public class Cegaro : MonoBehaviour {
 		// Sistema de vida extremadamente simple (número de golpes para que se muera)
 		// ^-- Con más tiempo lo hubiese hecho con un script de vida
 		m_hits2die = 5;
+
+		m_hitbox = transform.Find("Hitbox").gameObject;
+		m_timeSinceAttack = 1f;
 	}
 	
 	// Update is called once per frame
@@ -35,25 +41,33 @@ public class Cegaro : MonoBehaviour {
 			return;
 		}
 
+		m_timeSinceAttack += Time.deltaTime;
+
 		// -- Handle movement --
 
 		// Swap direction of sprite depending on walk direction
 		if (target.position.x < transform.position.x)
-            transform.localScale = new Vector3(0.5f, 0.5f, 1.0f);
+			transform.localScale = new Vector3(0.5f, 0.5f, 1.0f);
         else
-            transform.localScale = new Vector3(-0.5f, 0.5f, 1.0f);
+			transform.localScale = new Vector3(-0.5f, 0.5f, 1.0f);
 
 		float distanceToTarget = Vector3.Distance(transform.position, target.position);
 		bool isAttacking = m_animator.GetCurrentAnimatorStateInfo(0).IsName("Attack");
 		bool isBeingHurt = m_animator.GetCurrentAnimatorStateInfo(0).IsName("Hurt");
 		// Attack if reached target
-		if (distanceToTarget < 0.5f)
+		if (distanceToTarget < 0.5f && m_timeSinceAttack > 1f)
 		{
 			m_attack = true;
-		} else
-        {
-            m_attack = false;
-        }
+		}
+		else if (m_timeSinceAttack < 1f) // Combat idle
+		{
+			m_animator.SetInteger("AnimState", 1);
+			isAttacking = true;
+		}
+		else
+		{
+			m_attack = false;
+		}
 
 		// Move <-- Los comentarios de este if hacen que no se pueda empujar. Si se prefiere: descomentar
 		if (!m_attack && !isAttacking && !isBeingHurt)
@@ -76,7 +90,12 @@ public class Cegaro : MonoBehaviour {
         if (m_attack && !isAttacking && !isBeingHurt)
         {
             m_animator.SetTrigger("Attack");
-        }
+
+			m_timeSinceAttack = 0.0f;
+
+			// Activar hitbox brevemente
+			StartCoroutine(EnableHitbox(0.4f, 0.2f));
+		}
 
         //Run
         else if (!m_attack && !isBeingHurt)
@@ -96,9 +115,17 @@ public class Cegaro : MonoBehaviour {
 		}
 	}
 
+	private IEnumerator EnableHitbox(float delayBeforeActivation, float activeDuration)
+	{
+		yield return new WaitForSeconds(delayBeforeActivation);
+		m_hitbox.SetActive(true);
+		yield return new WaitForSeconds(activeDuration);
+		m_hitbox.SetActive(false);
+	}
+
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (collision.gameObject.CompareTag("Attack"))
+		if (collision.gameObject.CompareTag("PlayerAttack"))
 		{
 			TakeDamage();
 		}
