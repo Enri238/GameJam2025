@@ -79,6 +79,13 @@ public class Dialogue : MonoBehaviour
 			}
 		}
 	}
+	public void PlayDialogue()
+	{
+		if (!_isDialogueActive)
+		{
+			StartDialogue();
+		}
+	}
 
 	private IEnumerator ShowLine()
 	{
