@@ -9,8 +9,9 @@ public class Cegaro : MonoBehaviour {
     private Animator            m_animator;
     private Rigidbody2D         m_body2d;
     private bool                m_attack = false;
-    private bool                m_isDead = false;
+	private bool				m_isDead = false;
     private Spawner             m_spawner;
+	private int                 m_hits2die;
 
 	// Use this for initialization
 	void Start () {
@@ -21,14 +22,23 @@ public class Cegaro : MonoBehaviour {
         m_body2d.gravityScale = 0;
 
         target = GameObject.Find("Jugador").transform;
+		
+		// Sistema de vida extremadamente simple (número de golpes para que se muera)
+		// ^-- Con más tiempo lo hubiese hecho con un script de vida
+		m_hits2die = 5;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if (m_isDead)
+		{
+			return;
+		}
+
 		// -- Handle movement --
 
 		// Swap direction of sprite depending on walk direction
-        if (target.position.x < transform.position.x)
+		if (target.position.x < transform.position.x)
             transform.localScale = new Vector3(0.5f, 0.5f, 1.0f);
         else
             transform.localScale = new Vector3(-0.5f, 0.5f, 1.0f);
@@ -60,20 +70,10 @@ public class Cegaro : MonoBehaviour {
 			m_body2d.velocity = Vector2.zero; // Se para en seco cuando ataca
 		}
 
-        // -- Handle Animations -- // Cambiar
-        //Death
-        if (Input.GetKeyDown("h"))
-        {
-            if (!m_isDead)
-                m_animator.SetTrigger("Death");
-            else
-                m_animator.SetTrigger("Recover");
-
-            m_isDead = !m_isDead;
-        }
+        // -- Handle Animations --
 
         //Attack
-        else if (m_attack && !isAttacking && !isBeingHurt)
+        if (m_attack && !isAttacking && !isBeingHurt)
         {
             m_animator.SetTrigger("Attack");
         }
@@ -106,6 +106,36 @@ public class Cegaro : MonoBehaviour {
 
 	public void TakeDamage()
 	{
-		m_animator.SetTrigger("Hurt");
+		// Animaciones de daño y muerte
+		if (m_hits2die > 1)
+		{
+			m_hits2die--;
+			m_animator.SetTrigger("Hurt");
+		}
+		else
+		{
+			Die();
+		}
+	}
+
+	private void Die()
+	{
+		m_isDead = true;
+		// Parar en seco
+		m_body2d.velocity = Vector2.zero;
+		m_body2d.bodyType = RigidbodyType2D.Kinematic;
+		// Activar animación de muerte
+		m_animator.SetTrigger("Death");
+		// Cambiar dimensiones de la sombra
+		Transform sombra = transform.Find("Sombreado");
+		sombra.transform.localScale = new Vector3(1.67f, sombra.transform.localScale.y, 1.0f);
+		// Esperar y destruir
+		StartCoroutine(WaitAndDestroy());
+	}
+
+	private IEnumerator WaitAndDestroy()
+	{
+		yield return new WaitForSeconds(1f);
+		Destroy(gameObject);
 	}
 }

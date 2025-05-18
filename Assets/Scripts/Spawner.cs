@@ -8,8 +8,9 @@ public class Spawner : MonoBehaviour
     #region Variables
     public GameObject cegaroPrefab;
 	private int _contadorCegaros;
-	private bool _canSpawn;
+	private bool _spawnEnabled;
 	private float _respawnDelay = 3f;
+	private CegaroManager _cegaroManager;
 	#endregion
 
 	#region Unity Methods    
@@ -18,23 +19,32 @@ public class Spawner : MonoBehaviour
 	void Start()
     {
         _contadorCegaros = 0;
-        _canSpawn = false;
-    }
+        _spawnEnabled = false;
+		_cegaroManager = FindObjectOfType<CegaroManager>();
+	}
 
     // Update is called once per frame
     void Update()
     {
-        if (!_canSpawn && GameObject.Find("Punto de inicio") == null)
-        {
-            _canSpawn = true;
-        }
-        else if (_canSpawn && _contadorCegaros < 1)
-        {
-            _contadorCegaros++;
-			GameObject cegaro = Instantiate(cegaroPrefab, transform.position, Quaternion.identity);
+		if (!_spawnEnabled && GameObject.Find("Punto de inicio") == null)
+		{
+			_spawnEnabled = true;
+		}
+		else if (_spawnEnabled && _contadorCegaros < 1)
+		{
+			if (_cegaroManager.CanSpawnCegaro())
+			{
+				_contadorCegaros++;
+				_cegaroManager.RegistrarCegaroVivo();
 
-			Cegaro c = cegaro.GetComponent<Cegaro>();
-			c.SetSpawner(this);
+				GameObject cegaro = Instantiate(cegaroPrefab, transform.position, Quaternion.identity);
+				Cegaro c = cegaro.GetComponent<Cegaro>();
+				c.SetSpawner(this);
+			}
+			else
+			{
+				Destroy(gameObject);
+			}
 		}
 	}
 
@@ -45,6 +55,7 @@ public class Spawner : MonoBehaviour
 
 	private IEnumerator EsperarYReiniciar()
 	{
+		_cegaroManager.UpdateCegaros();
 		yield return new WaitForSeconds(_respawnDelay);
 		_contadorCegaros--;
 	}
