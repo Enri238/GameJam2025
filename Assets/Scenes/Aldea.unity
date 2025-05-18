@@ -12861,6 +12861,14 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4150323959558467194, guid: 764166de57e12024b92141cce553fbfa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 6064365556929625398, guid: 764166de57e12024b92141cce553fbfa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.29
+      objectReference: {fileID: 0}
     - target: {fileID: 7189265796788854692, guid: 764166de57e12024b92141cce553fbfa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.36
@@ -12902,6 +12910,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8349590598039267817, guid: 764166de57e12024b92141cce553fbfa, type: 3}
+      propertyPath: charAS
+      value: 
+      objectReference: {fileID: 1965984075}
+    - target: {fileID: 8349590598039267817, guid: 764166de57e12024b92141cce553fbfa, type: 3}
       propertyPath: _dialogueText
       value: 
       objectReference: {fileID: 1298910179}
@@ -12915,12 +12927,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8349590598039267817, guid: 764166de57e12024b92141cce553fbfa, type: 3}
       propertyPath: _dialogueLines.Array.data[0]
-      value: "Antonio: A\xFAn recuerdo a ese chico"
+      value: "Antonio: A\xFAn recuerdo a ese chico."
       objectReference: {fileID: 0}
     - target: {fileID: 8349590598039267817, guid: 764166de57e12024b92141cce553fbfa, type: 3}
       propertyPath: _dialogueLines.Array.data[1]
-      value: "Antonio: Sol\xEDa darle clase de programacion de videojuegos en la
-        universidad de Eliaf"
+      value: "Antonio: Sol\xEDa darle clase de programaci\xF3n de videojuegos en
+        la universidad de Eliaf."
       objectReference: {fileID: 0}
     - target: {fileID: 8349590598039267817, guid: 764166de57e12024b92141cce553fbfa, type: 3}
       propertyPath: _dialogueLines.Array.data[2]
@@ -13843,6 +13855,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3228735468008712452, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
+      propertyPath: charAS
+      value: 
+      objectReference: {fileID: 1965984075}
     - target: {fileID: 3228735468008712452, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
       propertyPath: _dialogueText
       value: 
@@ -15374,9 +15390,17 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 0.16
       objectReference: {fileID: 0}
+    - target: {fileID: 4150323959558467194, guid: 764166de57e12024b92141cce553fbfa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.27
+      objectReference: {fileID: 0}
     - target: {fileID: 6064365556929625398, guid: 764166de57e12024b92141cce553fbfa, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6064365556929625398, guid: 764166de57e12024b92141cce553fbfa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.27
       objectReference: {fileID: 0}
     - target: {fileID: 7189265796788854692, guid: 764166de57e12024b92141cce553fbfa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15419,6 +15443,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8349590598039267817, guid: 764166de57e12024b92141cce553fbfa, type: 3}
+      propertyPath: charAS
+      value: 
+      objectReference: {fileID: 1965984075}
+    - target: {fileID: 8349590598039267817, guid: 764166de57e12024b92141cce553fbfa, type: 3}
       propertyPath: _dialogueText
       value: 
       objectReference: {fileID: 1298910179}
@@ -15436,7 +15464,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8349590598039267817, guid: 764166de57e12024b92141cce553fbfa, type: 3}
       propertyPath: _dialogueLines.Array.data[1]
-      value: CON LO BIEN QUE ESTABA YO EN MI CASA!
+      value: "\xA1CON LO BIEN QUE ESTABA YO EN MI CASA!"
       objectReference: {fileID: 0}
     - target: {fileID: 8478755613202974568, guid: 764166de57e12024b92141cce553fbfa, type: 3}
       propertyPath: m_Name
@@ -16677,6 +16705,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3228735468008712452, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
+      propertyPath: charAS
+      value: 
+      objectReference: {fileID: 1965984075}
+    - target: {fileID: 3228735468008712452, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
@@ -17622,6 +17654,7 @@ MonoBehaviour:
   _dialoguePanel: {fileID: 33574544}
   _dialogueText: {fileID: 1298910179}
   _isMonologue: 1
+  charAS: {fileID: 1965984075}
   _dialogueLines:
   - 'AFAR: Ahora lo recuerdo todo...'
 --- !u!1 &1463530376 stripped
@@ -21793,6 +21826,68 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7789772945384442821, guid: f5c18f6a2613cb845a439fb7f2b9bdd7, type: 3}
   m_PrefabInstance: {fileID: 1958534987}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1965984074
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 893995439699944366, guid: 7697550323e1b9a459d957ee14e08734, type: 3}
+      propertyPath: m_Name
+      value: Audio Source Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800700367100935133, guid: 7697550323e1b9a459d957ee14e08734, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.060956
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800700367100935133, guid: 7697550323e1b9a459d957ee14e08734, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.44722
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800700367100935133, guid: 7697550323e1b9a459d957ee14e08734, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.15841183
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800700367100935133, guid: 7697550323e1b9a459d957ee14e08734, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800700367100935133, guid: 7697550323e1b9a459d957ee14e08734, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800700367100935133, guid: 7697550323e1b9a459d957ee14e08734, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800700367100935133, guid: 7697550323e1b9a459d957ee14e08734, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800700367100935133, guid: 7697550323e1b9a459d957ee14e08734, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800700367100935133, guid: 7697550323e1b9a459d957ee14e08734, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800700367100935133, guid: 7697550323e1b9a459d957ee14e08734, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7697550323e1b9a459d957ee14e08734, type: 3}
+--- !u!82 &1965984075 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4208343303465021953, guid: 7697550323e1b9a459d957ee14e08734, type: 3}
+  m_PrefabInstance: {fileID: 1965984074}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1970983112
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23883,6 +23978,14 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4150323959558467194, guid: 764166de57e12024b92141cce553fbfa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6064365556929625398, guid: 764166de57e12024b92141cce553fbfa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.16
+      objectReference: {fileID: 0}
     - target: {fileID: 7189265796788854692, guid: 764166de57e12024b92141cce553fbfa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.616
@@ -23923,6 +24026,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8349590598039267817, guid: 764166de57e12024b92141cce553fbfa, type: 3}
+      propertyPath: charAS
+      value: 
+      objectReference: {fileID: 1965984075}
     - target: {fileID: 8349590598039267817, guid: 764166de57e12024b92141cce553fbfa, type: 3}
       propertyPath: _dialogueText
       value: 
@@ -24403,6 +24510,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3228735468008712452, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
+      propertyPath: charAS
+      value: 
+      objectReference: {fileID: 1965984075}
+    - target: {fileID: 3228735468008712452, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
       propertyPath: _dialogueText
       value: 
       objectReference: {fileID: 1298910179}
@@ -24611,6 +24722,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8349590598039267817, guid: 764166de57e12024b92141cce553fbfa, type: 3}
+      propertyPath: charAS
+      value: 
+      objectReference: {fileID: 1965984075}
+    - target: {fileID: 8349590598039267817, guid: 764166de57e12024b92141cce553fbfa, type: 3}
       propertyPath: _dialogueText
       value: 
       objectReference: {fileID: 1298910179}
@@ -24620,11 +24735,11 @@ PrefabInstance:
       objectReference: {fileID: 33574544}
     - target: {fileID: 8349590598039267817, guid: 764166de57e12024b92141cce553fbfa, type: 3}
       propertyPath: _dialogueLines.Array.data[0]
-      value: "AFAR fue el guerrero mas valiente que ha tenido y tendr\xE1 ELIAF."
+      value: "AFAR fue el guerrero m\xE1s valiente que ha tenido y tendr\xE1 ELIAF."
       objectReference: {fileID: 0}
     - target: {fileID: 8349590598039267817, guid: 764166de57e12024b92141cce553fbfa, type: 3}
       propertyPath: _dialogueLines.Array.data[1]
-      value: Fue una gran perdida, era el lider del gran Ejercito de ELIAF
+      value: "Fue una gran p\xE9rdida, era el l\xEDder del gran Ej\xE9rcito de ELIAF."
       objectReference: {fileID: 0}
     - target: {fileID: 8478755613202974568, guid: 764166de57e12024b92141cce553fbfa, type: 3}
       propertyPath: m_Name
@@ -24691,6 +24806,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Elena
       objectReference: {fileID: 0}
+    - target: {fileID: 6028864348162960451, guid: 8e6036ed0ec0e784a90d6f3ff42de59f, type: 3}
+      propertyPath: charAS
+      value: 
+      objectReference: {fileID: 1965984075}
     - target: {fileID: 6028864348162960451, guid: 8e6036ed0ec0e784a90d6f3ff42de59f, type: 3}
       propertyPath: _dialogueText
       value: 
@@ -25258,6 +25377,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Estatua
       objectReference: {fileID: 0}
+    - target: {fileID: 1203846276436048944, guid: b16772da8b416204a852207574d0cfa2, type: 3}
+      propertyPath: charAS
+      value: 
+      objectReference: {fileID: 1965984075}
     - target: {fileID: 1203846276436048944, guid: b16772da8b416204a852207574d0cfa2, type: 3}
       propertyPath: _dialogueText
       value: 
@@ -25985,3 +26108,4 @@ SceneRoots:
   - {fileID: 418321125}
   - {fileID: 1828787666}
   - {fileID: 1989843906}
+  - {fileID: 1965984074}

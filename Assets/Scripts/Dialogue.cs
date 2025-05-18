@@ -11,6 +11,7 @@ public class Dialogue : MonoBehaviour
 	[SerializeField] private TMP_Text _dialogueText;
 	[SerializeField] private bool _isMonologue;
 	[SerializeField, TextArea(4, 6)] private string[] _dialogueLines;
+	[SerializeField] AudioSource charAS;
 	private bool _isPlayerInRange, _isDialogueActive;
 	private int _lineIndex;
 	private float _typingSpeed = 0.033f;
@@ -86,6 +87,10 @@ public class Dialogue : MonoBehaviour
 		foreach (char ch in _dialogueLines[_lineIndex])
 		{
 			_dialogueText.text += ch;
+			if (ch != ' ')
+			{
+				charAS.Play();
+			}
 			yield return new WaitForSeconds(_typingSpeed);
 		}
 	}

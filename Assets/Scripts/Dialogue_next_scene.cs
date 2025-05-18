@@ -10,6 +10,7 @@ public class Dialogue_next_scene : MonoBehaviour
 	[SerializeField] private GameObject _dialogueMark, _dialoguePanel;
 	[SerializeField] private TMP_Text _dialogueText;
 	[SerializeField] private bool _isMonologue;
+	[SerializeField] AudioSource charAS;
 	[SerializeField, TextArea(4, 6)] private string[] _dialogueLines;
 	private bool _isPlayerInRange, _isDialogueActive;
 	private int _lineIndex;
@@ -97,6 +98,10 @@ public class Dialogue_next_scene : MonoBehaviour
 		foreach (char ch in _dialogueLines[_lineIndex])
 		{
 			_dialogueText.text += ch;
+			if (ch != ' ')
+			{
+				charAS.Play();
+			}
 			yield return new WaitForSeconds(_typingSpeed);
 		}
 	}

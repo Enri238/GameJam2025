@@ -7,12 +7,15 @@ public class HeroKnightv2 : MonoBehaviour
 	[SerializeField] float m_speed = 4.0f; 
 	[SerializeField] bool isGhost;
 	[SerializeField] GameObject hitbox;
+	[SerializeField] AudioSource slashAS, stepGrassAS, stepStoneAS;
 
 	private Animator m_animator;
 	private Rigidbody2D m_body2d;
 	private int m_currentAttack = 0;
 	private float m_timeSinceAttack = 0.5f;
 	private float m_delayToIdle = 0.0f;
+	private bool isOnStone = false;
+	private Coroutine footstepCoroutine;
 
 	// Use this for initialization
 	void Start()
@@ -30,7 +33,6 @@ public class HeroKnightv2 : MonoBehaviour
 		}
 	}
 
-	// Update is called once per frame
 	void Update()
 	{
 		// Increase timer that controls attack combo
@@ -66,6 +68,11 @@ public class HeroKnightv2 : MonoBehaviour
 				// Reset timer
 				m_delayToIdle = 0.05f;
 				m_animator.SetInteger("AnimState", 1);
+
+				if (footstepCoroutine == null && !isGhost)
+				{
+					footstepCoroutine = StartCoroutine(PlayFootsteps());
+				}
 			}
 			// Idle
 			else
@@ -74,6 +81,14 @@ public class HeroKnightv2 : MonoBehaviour
 				m_delayToIdle -= Time.deltaTime;
 				if (m_delayToIdle < 0)
 					m_animator.SetInteger("AnimState", 0);
+
+				if (footstepCoroutine != null)
+				{
+					StopCoroutine(footstepCoroutine);
+					stepGrassAS.Stop();
+					stepStoneAS.Stop();
+					footstepCoroutine = null;
+				}
 			}
 		}
 		else
@@ -100,6 +115,8 @@ public class HeroKnightv2 : MonoBehaviour
 
 			// Call one of three attack animations "Attack1", "Attack2", "Attack3"
 			m_animator.SetTrigger("Attack" + m_currentAttack);
+
+			slashAS.Play();
 
 			// Reset timer
 			m_timeSinceAttack = 0.0f;
@@ -128,5 +145,52 @@ public class HeroKnightv2 : MonoBehaviour
 	{
 		// Animación de daño
 		m_animator.SetTrigger("Hurt");
+	}
+
+	public void SetIsOnStone(bool value)
+	{
+		isOnStone = value;
+	}
+
+	private IEnumerator PlayFootsteps()
+	{
+		while (true)
+		{
+			bool isAttacking = m_animator.GetCurrentAnimatorStateInfo(0).IsName("Attack1") ||
+							   m_animator.GetCurrentAnimatorStateInfo(0).IsName("Attack2") ||
+						       m_animator.GetCurrentAnimatorStateInfo(0).IsName("Attack3");
+
+			bool isBeingHurt = m_animator.GetCurrentAnimatorStateInfo(0).IsName("Hurt");
+
+			if (!isAttacking && !isBeingHurt && !isGhost)
+			{
+				if (isOnStone)
+				{
+					if (!stepStoneAS.isPlaying)
+					{
+						stepGrassAS.Stop();
+					}
+					else
+					{
+						stepStoneAS.Stop();
+					}
+					stepStoneAS.Play();
+				}
+				else
+				{
+					if (!stepGrassAS.isPlaying)
+					{
+						stepStoneAS.Stop();
+					}
+					else
+					{
+						stepGrassAS.Stop();
+					}
+					stepGrassAS.Play();
+				}
+			}
+			
+			yield return new WaitForSeconds(0.5f);
+		}
 	}
 }

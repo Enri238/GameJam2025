@@ -5,8 +5,9 @@ public class Cegaro : MonoBehaviour {
 
     [SerializeField] float      m_speed = 4.0f;
     [SerializeField] Transform  target;
+	[SerializeField] AudioSource slashAS, stepGrassAS, stepStoneAS;
 
-    private Animator            m_animator;
+	private Animator            m_animator;
     private Rigidbody2D         m_body2d;
     private bool                m_attack = false;
 	private bool				m_isDead = false;
@@ -15,6 +16,9 @@ public class Cegaro : MonoBehaviour {
 
 	private GameObject			m_hitbox;
 	private float				m_timeSinceAttack;
+
+	private bool				isOnStone = false;
+	private Coroutine			footstepCoroutine;
 
 	// Use this for initialization
 	void Start () {
@@ -63,6 +67,14 @@ public class Cegaro : MonoBehaviour {
 		{
 			m_animator.SetInteger("AnimState", 1);
 			isAttacking = true;
+
+			if (footstepCoroutine != null)
+			{
+				StopCoroutine(footstepCoroutine);
+				stepGrassAS.Stop();
+				stepStoneAS.Stop();
+				footstepCoroutine = null;
+			}
 		}
 		else
 		{
@@ -99,7 +111,14 @@ public class Cegaro : MonoBehaviour {
 
         //Run
         else if (!m_attack && !isBeingHurt)
-            m_animator.SetInteger("AnimState", 2);
+		{
+			m_animator.SetInteger("AnimState", 2);
+
+			if (footstepCoroutine == null)
+			{
+				footstepCoroutine = StartCoroutine(PlayFootsteps());
+			}
+		} 
     }
 
 	public void SetSpawner(Spawner spawner)
@@ -118,6 +137,7 @@ public class Cegaro : MonoBehaviour {
 	private IEnumerator EnableHitbox(float delayBeforeActivation, float activeDuration)
 	{
 		yield return new WaitForSeconds(delayBeforeActivation);
+		slashAS.Play();
 		m_hitbox.SetActive(true);
 		yield return new WaitForSeconds(activeDuration);
 		m_hitbox.SetActive(false);
@@ -164,5 +184,49 @@ public class Cegaro : MonoBehaviour {
 	{
 		yield return new WaitForSeconds(1f);
 		Destroy(gameObject);
+	}
+
+	public void SetIsOnStone(bool value)
+	{
+		isOnStone = value;
+	}
+
+	private IEnumerator PlayFootsteps()
+	{
+		while (true)
+		{
+			bool isAttacking = m_animator.GetCurrentAnimatorStateInfo(0).IsName("Attack");
+			bool isBeingHurt = m_animator.GetCurrentAnimatorStateInfo(0).IsName("Hurt");
+
+			if (!isAttacking && !isBeingHurt)
+			{
+				if (isOnStone)
+				{
+					if (!stepStoneAS.isPlaying)
+					{
+						stepGrassAS.Stop();
+					}
+					else
+					{
+						stepStoneAS.Stop();
+					}
+					stepStoneAS.Play();
+				}
+				else
+				{
+					if (!stepGrassAS.isPlaying)
+					{
+						stepStoneAS.Stop();
+					}
+					else
+					{
+						stepGrassAS.Stop();
+					}
+					stepGrassAS.Play();
+				}
+			}
+
+			yield return new WaitForSeconds(0.5f);
+		}
 	}
 }

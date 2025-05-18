@@ -180,7 +180,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: f4ae2975a30558d40996c5061abb6f61, type: 3}
     m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
@@ -192,7 +192,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\n\n\n\n\nJUEGO REALIZADO POR :\n\n\n\nENRIQUE IBA\xD1EZ\n\n\n\nANTONIO
+  m_Text: "\n\n\n\n\nJUEGO REALIZADO POR :\n\n\n\nENRIQUE IBA\xD1EZ RICO\n\n\n\nANTONIO
     ORTEGA RIVAS\n\n\nASSETS:\n\n\n\nINTERFAZ DE USUARIO :\n\n\n\nBLACK HAMMER\n\n\n\nALDEA
     2D:\n\n\n\nCRAFPIX.NET\n\n\n\nALDEANOS:\n\n\n\nCRAFPIX.NET\n\n\n\nGUERRERO AFAR:\n\n\n\nSven
     Thole\n\n\n\nC\xC9GAROS:\n\n\n\nSven Thole\n\n\n\nELENA:\n\n\n\nClembod\n\n\n\nM\xDASICA:\n\n\n\n\nSUNO.AI\n\nFINAL
@@ -420,7 +420,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: f4ae2975a30558d40996c5061abb6f61, type: 3}
     m_FontSize: 70
     m_FontStyle: 1
     m_BestFit: 0
@@ -432,7 +432,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: La muerte no es el fin
+  m_Text: La muerte no es el fin mientras dejes tu huella
 --- !u!222 &1183344919
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -669,7 +669,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: f4ae2975a30558d40996c5061abb6f61, type: 3}
     m_FontSize: 105
     m_FontStyle: 0
     m_BestFit: 0
