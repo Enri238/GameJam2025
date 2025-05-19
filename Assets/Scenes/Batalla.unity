@@ -4323,7 +4323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6028864348162960451, guid: 8e6036ed0ec0e784a90d6f3ff42de59f, type: 3}
       propertyPath: _dialogueLines.Array.data[0]
-      value: "ELENA: Afar... Siempre ser\xE1s recordado."
+      value: "ELENA: AFAR... Siempre ser\xE1s recordado."
       objectReference: {fileID: 0}
     - target: {fileID: 6028864348162960451, guid: 8e6036ed0ec0e784a90d6f3ff42de59f, type: 3}
       propertyPath: _dialogueLines.Array.data[1]
@@ -15837,7 +15837,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "C\xE9garos restantes: X"
+  m_text: 'Noraes restantes: X'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 93d7da5e80a65f54cbb2fe99ba92bb55, type: 2}
   m_sharedMaterial: {fileID: 5449815542791343293, guid: 93d7da5e80a65f54cbb2fe99ba92bb55, type: 2}
@@ -18628,11 +18628,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3228735468008712452, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
       propertyPath: _dialogueLines.Array.data[1]
-      value: "\xBF?: \xA1Vienen los C\xC9GAROS!"
+      value: "\xBF?: \xA1Vienen los NORAES!"
       objectReference: {fileID: 0}
     - target: {fileID: 3228735468008712452, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
       propertyPath: _dialogueLines.Array.data[2]
-      value: "AFAR: \xBFLos C\xC9GAROS?"
+      value: "AFAR: \xBFLos NORAES?"
       objectReference: {fileID: 0}
     - target: {fileID: 3228735468008712452, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
       propertyPath: _dialogueLines.Array.data[3]

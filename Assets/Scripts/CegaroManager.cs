@@ -25,7 +25,7 @@ public class CegaroManager : MonoBehaviour
         _remainingCegaros = 6;
         _cegarosVivos     = 0;
 
-        _cegaroManager.text = "Cégaros restantes: " + _remainingCegaros;
+        _cegaroManager.text = "Noraes restantes: " + _remainingCegaros;
 
         if (cinematicaMuerte != null)
         {
@@ -38,7 +38,7 @@ public class CegaroManager : MonoBehaviour
         _remainingCegaros = Mathf.Max(0, _remainingCegaros - 1);
         _cegarosVivos     = Mathf.Max(0, _cegarosVivos - 1);
 
-        _cegaroManager.text = "Cégaros restantes: " + _remainingCegaros;
+        _cegaroManager.text = "Noraes restantes: " + _remainingCegaros;
 
         if (_remainingCegaros == 0 && cinematicaMuerte != null && !_cinematicaIniciada)
         {
