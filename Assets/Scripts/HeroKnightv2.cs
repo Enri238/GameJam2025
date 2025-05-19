@@ -152,7 +152,7 @@ public class HeroKnightv2 : MonoBehaviour
 		isOnStone = value;
 	}
 
-	private IEnumerator PlayFootsteps()
+	private IEnumerator PlayFootsteps() // Se podría haber hecho con Invoke
 	{
 		while (true)
 		{

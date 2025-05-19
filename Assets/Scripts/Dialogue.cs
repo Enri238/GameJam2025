@@ -73,12 +73,17 @@ public class Dialogue : MonoBehaviour
 			_dialoguePanel.SetActive(false);
 			_dialogueMark.SetActive(true);
 			GameObject.FindGameObjectWithTag("Player").GetComponent<HeroKnightv2>().enabled = true; // Habilitar movimiento del jugador
-			if (_isMonologue)
+			if (_isMonologue && this.name != "Elena") // Chapucilla
 			{
 				Destroy(this.gameObject);
 			}
+			else if (this.name == "Elena") // Chapucilla
+			{
+				_isPlayerInRange = false;
+			}
 		}
 	}
+
 	public void PlayDialogue()
 	{
 		if (!_isDialogueActive)

@@ -57,6 +57,11 @@ public class CegaroManager : MonoBehaviour
         _cegarosVivos++;
     }
 
+    public int GetRemainingCegaros()
+    {
+        return _remainingCegaros;
+	}
+
     private void OnCinematicaTerminada(PlayableDirector director)
     {
         int escenaActual = SceneManager.GetActiveScene().buildIndex;

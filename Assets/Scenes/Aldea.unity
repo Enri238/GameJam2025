@@ -14006,13 +14006,17 @@ PrefabInstance:
       propertyPath: _dialogueLines.Array.data[7]
       value: "AFAR: \xBFELENA? \xBFMe escuchas?"
       objectReference: {fileID: 0}
+    - target: {fileID: 3676716122279647601, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8669396815012926873, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
       propertyPath: m_Size.x
-      value: 2.5297406
+      value: 2.522283
       objectReference: {fileID: 0}
     - target: {fileID: 8669396815012926873, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
       propertyPath: m_Offset.x
-      value: -0.006020665
+      value: -0.010870278
       objectReference: {fileID: 0}
     - target: {fileID: 9058860344432867297, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
       propertyPath: m_Name
@@ -16827,6 +16831,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1320782966902510427, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1320782966902510427, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.673
+      objectReference: {fileID: 0}
     - target: {fileID: 3228735468008712452, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
       propertyPath: charAS
       value: 
@@ -16862,6 +16874,10 @@ PrefabInstance:
     - target: {fileID: 3228735468008712452, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
       propertyPath: _dialogueLines.Array.data[7]
       value: "AFAR: \xBFELENA? \xBFMe escuchas?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3676716122279647601, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8669396815012926873, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
       propertyPath: m_Size.x
@@ -22324,6 +22340,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Jugador: {fileID: 1463530376}
+  cegaroManager: {fileID: 0}
+  cegaroPanel: {fileID: 0}
 --- !u!1001 &2016000911
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24664,6 +24682,14 @@ PrefabInstance:
       propertyPath: _dialogueLines.Array.data[3]
       value: "\xBF?: Adem\xE1s, me siento raro... Como muy ligero..."
       objectReference: {fileID: 0}
+    - target: {fileID: 3676716122279647601, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5626451157393610406, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2000
+      objectReference: {fileID: 0}
     - target: {fileID: 9058860344432867297, guid: 60b034fa443c72a4f84ddd3ed43645bc, type: 3}
       propertyPath: m_Name
       value: Punto de inicio
@@ -24806,7 +24832,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7189265796788854692, guid: 764166de57e12024b92141cce553fbfa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.4
+      value: 4.947
       objectReference: {fileID: 0}
     - target: {fileID: 7189265796788854692, guid: 764166de57e12024b92141cce553fbfa, type: 3}
       propertyPath: m_LocalPosition.y
