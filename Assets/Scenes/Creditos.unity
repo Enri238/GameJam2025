@@ -156,8 +156,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -3915}
-  m_SizeDelta: {x: 700, y: 5835.1074}
+  m_AnchoredPosition: {x: 0, y: -4496.48}
+  m_SizeDelta: {x: 700, y: 6175.0405}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &83951710
 MonoBehaviour:
@@ -195,8 +195,8 @@ MonoBehaviour:
   m_Text: "\n\n\n\n\nJUEGO REALIZADO POR :\n\n\n\nENRIQUE IBA\xD1EZ RICO\n\n\n\nANTONIO
     ORTEGA RIVAS\n\n\nASSETS:\n\n\n\nINTERFAZ DE USUARIO :\n\n\n\nBLACK HAMMER\n\n\n\nALDEA
     2D:\n\n\n\nCRAFPIX.NET\n\n\n\nALDEANOS:\n\n\n\nCRAFPIX.NET\n\n\n\nGUERRERO AFAR:\n\n\n\nSven
-    Thole\n\n\n\nC\xC9GAROS:\n\n\n\nSven Thole\n\n\n\nELENA:\n\n\n\nClembod\n\n\n\nM\xDASICA:\n\n\n\n\nSUNO.AI\n\nFINAL
-    FANTASY XVI OST - THE HIDEAWA\n\n\n\n\nBY GAM\xD3N JAMES\n"
+    Thole\n\n\n\nL\xC9GAROS:\n\n\n\nSven Thole\n\n\n\nELENA:\n\n\n\nClembod\n\n\n\nM\xDASICA:\n\n\n\n\nSUNO.AI\n\nFINAL
+    FANTASY XVI OST - THE HIDEAWA\n\n\n\n\n\nBY GAM\xD3N JAMES\n"
 --- !u!222 &83951711
 CanvasRenderer:
   m_ObjectHideFlags: 0

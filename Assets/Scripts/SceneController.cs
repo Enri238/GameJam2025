@@ -16,14 +16,17 @@ public class SceneController : MonoBehaviour
     }
     public void NextLevel()
     {
+        Debug.Log("Loading next level...");
         StartCoroutine(LoadLevel());
     }
     IEnumerator LoadLevel()
     {
+         
         transitionAnim.SetTrigger("End");
         yield return new WaitForSeconds(1);
 
         int currentIndex = SceneManager.GetActiveScene().buildIndex;
+       
         int nextIndex = currentIndex + 1;
 
         // Si nextIndex es igual o mayor que el número total de escenas en build settings, vuelve a 0
@@ -33,6 +36,8 @@ public class SceneController : MonoBehaviour
         }
 
         SceneManager.LoadScene(nextIndex);
+        Debug.Log("Escena numero: " + nextIndex);
         transitionAnim.SetTrigger("Start");
+       
     }
 }
